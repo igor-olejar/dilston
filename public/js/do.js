@@ -10,7 +10,18 @@ $(function() {
         value: 0,
         change: function(event, ui) {
             var cc_number = $(this).data('ccnumber');
-            console.log(ui.value);
+            //console.log(cc_number, ui.value);
+
+            // send cc number and value to API
+            /*$.ajax({
+                type: 'GET',
+                dataType: 'jsonp',
+                data: {cc: cc_number, value: ui.value},
+                url: 'http://localhost:8080/test',
+                success: function(msg) {
+                    console.log(msg);
+                }
+            });*/
         }
         /*slide: function(event, ui) {
             var cc_number = $(this).data('ccnumber');
