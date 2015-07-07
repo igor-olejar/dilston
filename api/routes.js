@@ -11,7 +11,7 @@ var midiPort = 0; // This can be IAC or Network Session or any other MIDI port
 // define API points
 module.exports = [
 	{
-		method: ['GET', 'POST', 'PUT'],
+		method: 'GET',//['GET', 'POST', 'PUT'],
 		path: '/',
 		config: {
 			handler: nothingToSee
@@ -38,9 +38,9 @@ module.exports = [
 */
 function playNote(request)
 {
-	var note = request.params.note;
+	var note = request.payload.midi_note;
 	sendMessage(144, note, 100);
-    request.reply('Note sent.');
+    request.reply('Note sent. MIDI note = ' + note);
 }
 
 /**
@@ -48,10 +48,10 @@ function playNote(request)
 */
 function sendControl(request)
 {
-	var cc = request.params.cc_number;
-	var value = request.params.val;
+	var cc = request.payload.cc_number;
+	var value = request.payload.value;
 	sendMessage(176, cc, value);
-    request.reply('Control message sent.');
+    request.reply('Control message sent. CC = ' + cc + ', value = ' + value);
 }
 
 /**
@@ -67,7 +67,7 @@ function nothingToSee(request)
 */
 function sendMessage($type, $number, $value)
 {
-	output.openPort($midiPort);
+	output.openPort(midiPort);
 	output.sendMessage([$type, $number, $value]);
 	output.closePort();
 }

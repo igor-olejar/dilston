@@ -1,7 +1,3 @@
-// setup
-//var dilston = new Dilston();
-//dilston.findPortNumber();
-
 // jQuery
 $(function() {
     $(".cc-slider").slider({
@@ -24,5 +20,19 @@ $(function() {
         }
     });
 
+    $("button").on("click", function(e) {
+        e.preventDefault();
 
+        var midi_note = $(this).data('midinote');
+
+        // send the midi note to API
+        $.ajax({
+            type: 'POST',
+            data: 'midi_note=' + midi_note,
+            url: '/messenger.php',
+            success: function(msg) {
+                console.log(msg);
+            }
+        });
+    });
 });
