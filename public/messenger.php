@@ -1,6 +1,6 @@
 <?php
 
-$url = "http://24a4720f.ngrok.io";
+$url = "";
 
 $postvars = array();
 
