@@ -2,3 +2,11 @@
     width: 300px;
     margin: 10px;
 }
+
+#server-response {
+    border: 1px solid black;
+    width: 50%;
+    padding: 10px;
+    line-height: 28px;
+    min-height: 28px;
+}

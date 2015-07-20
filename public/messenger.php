@@ -1,6 +1,6 @@
 <?php
 
-$url = "";
+$url = "http://1be1bf0d.ngrok.io";
 
 $postvars = array();
 
@@ -29,4 +29,4 @@ $output = curl_exec($ch);
 
 curl_close($ch);
 
-var_dump($output);
+echo $output;

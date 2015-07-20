@@ -14,7 +14,10 @@ $(function() {
                 data: 'cc_number=' + cc_number + "&value=" + ui.value,
                 url: '/messenger.php',
                 success: function(msg) {
-                    console.log(msg);
+                    $("#server-response-inner").hide(40, function() {
+                        $(this).html(msg);
+                    });
+                    $("#server-response-inner").show('slow');
                 }
             });
         }
@@ -31,7 +34,10 @@ $(function() {
             data: 'midi_note=' + midi_note,
             url: '/messenger.php',
             success: function(msg) {
-                console.log(msg);
+                $("#server-response-inner").hide(40, function() {
+                    $(this).html(msg);
+                });
+                $("#server-response-inner").show('slow');
             }
         });
     });
