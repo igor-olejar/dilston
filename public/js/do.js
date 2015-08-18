@@ -1,26 +1,18 @@
 // jQuery
 $(function() {
-    $(".cc-slider").slider({
-        min: 0,
-        max: 127,
-        value: 0,
-        change: function(event, ui) {
-            var cc_number = $(this).data('ccnumber');
-            //console.log(cc_number, ui.value);
+    $(".ui-slider").on("slidestop", function(ui) {
+        var target = ui.target;
+        var cc_number = $(target).data('ccnumber');
 
-            // send cc number and value to API
-            $.ajax({
-                type: 'POST',
-                data: 'cc_number=' + cc_number + "&value=" + ui.value,
-                url: '/messenger.php',
-                success: function(msg) {
-                    $("#server-response-inner").hide(40, function() {
-                        $(this).html(msg);
-                    });
-                    $("#server-response-inner").show('slow');
-                }
-            });
-        }
+        // send cc number and value to API
+        $.ajax({
+            type: 'POST',
+            data: 'cc_number=' + cc_number + "&value=" + target.value,
+            url: 'messenger.php',
+            success: function(msg) {
+                showMessage(msg);
+            }
+        });
     });
 
     $("button").on("click", function(e) {
@@ -32,13 +24,19 @@ $(function() {
         $.ajax({
             type: 'POST',
             data: 'midi_note=' + midi_note,
-            url: '/messenger.php',
+            url: 'messenger.php',
             success: function(msg) {
-                $("#server-response-inner").hide(40, function() {
-                    $(this).html(msg);
-                });
-                $("#server-response-inner").show('slow');
+                showMessage(msg);
             }
         });
     });
+
+    function showMessage(msg)
+    {
+        if (msg == "") msg = "There was an error connecting to the server.";
+        $("#server-response-inner").hide(40, function() {
+            $(this).html(msg);
+        });
+        $("#server-response-inner").show('slow');
+    }
 });
