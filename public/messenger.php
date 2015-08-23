@@ -1,6 +1,5 @@
 <?php
-
-$url = "http://64f9d0a0.ngrok.io";
+$url = file_get_contents("../server.txt");
 
 $postvars = array();
 

@@ -4,3 +4,17 @@
     line-height: 28px;
     min-height: 28px;
 }
+
+.red-text { color: red; }
+
+.blue-text { color: blue; }
+
+.green-text { color: green; }
+
+#red-slider .ui-btn-active { background-color: #c33 !important;}
+
+#green-slider .ui-btn-active { background-color: #2FA828 !important;}
+
+#slider-red-delay { color: #c33 !important; }
+
+#slider-green-delay { color: #2FA828 !important; }

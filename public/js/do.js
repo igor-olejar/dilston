@@ -13,7 +13,15 @@ $(function() {
                 showMessage(msg);
             }
         });
+    }).change(function(ui){
+        var target = ui.target;
+
+        if (target.value == 0) $("#slider-palette").css("color", "black");
+        if (target.value > 0 && target.value < 40) $("#slider-palette").css("color", "#c33");
+        if (target.value > 40 && target.value < 80) $("#slider-palette").css("color", "blue");
+        if (target.value > 80) $("#slider-palette").css("color", "#2FA828");
     });
+
 
     $("button").on("click", function(e) {
         e.preventDefault();
