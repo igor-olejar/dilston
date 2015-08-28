@@ -1,5 +1,5 @@
 <?php
-$url = file_get_contents("../server.txt");
+$url = file_get_contents("server.txt");
 
 $postvars = array();
 
