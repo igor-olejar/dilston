@@ -16,7 +16,14 @@
 		<link rel="stylesheet" href="css/custom.css" media="screen" title="no title" charset="utf-8">
 	</head>
 	<body>
-		<div class="container">
+		<header>
+			<div class="container">
+				<div class="row">
+					VJ program response: <span id="server-response-inner">I'm waiting for your instructions...</span>
+				</div>
+			</div>
+		</header>
+		<div class="container main">
 			<div class="row">
 				<h1>Dilston</h1>
 			</div>
@@ -24,15 +31,6 @@
 				<h2>Web-based VJ controller</h2>
 				<p>
 					Use the controlls below to interact with Autorotation's visuals.
-				</p>
-			</div>
-
-			<div class="row">
-				<p>
-					<h3>Server Response</h3>
-					<div id="server-response">
-						<div id="server-response-inner">Wait for the message...</div>
-					</div>
 				</p>
 			</div>
 
@@ -91,10 +89,10 @@
 			</div>
 
 			<hr />
-			<footer>
+			<div>
 				&copy; Autorotation, 2015<br />
 				<a href="http://autorotation.org">http://autorotation.org</a>
-			</footer>
+			</div>
 		</div>
 	</body>
 </html>

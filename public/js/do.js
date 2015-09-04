@@ -42,9 +42,10 @@ $(function() {
     function showMessage(msg)
     {
         if (msg == "") msg = "There was an error connecting to the server.";
-        $("#server-response-inner").hide(40, function() {
-            $(this).html(msg);
-        });
-        $("#server-response-inner").show('slow');
+        $("#server-response-inner").css('opacity', '0').html(msg);
+
+        setTimeout(function(){
+            $("#server-response-inner").css('opacity', '1');
+        }, 400)
     }
 });

@@ -1,10 +1,3 @@
-#server-response {
-    border: 1px solid black;
-    padding: 10px;
-    line-height: 28px;
-    min-height: 28px;
-}
-
 .red-text { color: red; }
 
 .blue-text { color: blue; }
@@ -18,3 +11,17 @@
 #slider-red-delay { color: #c33 !important; }
 
 #slider-green-delay { color: #2FA828 !important; }
+
+header {
+    background-color: rgba(0, 0, 0, 0.38);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 999;
+    text-shadow: none;
+}
+
+.main { margin-top: 15px; }
